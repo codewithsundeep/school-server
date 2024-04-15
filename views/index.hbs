@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--lib uses jszip-->
+<script src="https://unpkg.com/jszip/dist/jszip.min.js"></script>
+<script src="docx-preview.min.js"></script>
+<script>
+    fetch("/a.docx").then(e=>e.blob()).then(dt=>{
+        var docData = dt;
+
+docx.renderAsync(docData, document.getElementById("container"))
+    .then(x => console.log("docx: finished"));
+    })
+   
+</script>
+<body>
+    <div id="container"></div>
+</body>
+</body>
+</html>
